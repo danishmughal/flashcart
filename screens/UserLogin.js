@@ -1,17 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FormLabel, FormInput, Button } from 'react-native-elements';
 
 export default class LoginScreen extends React.Component {
   static navigationOptions = {
     title: 'Login',
   };
 
+  loginUser = () => {
+    this.props.navigation.navigate('Featured');
+  };
+
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
     return (
       <View style={styles.container}>
-        <Text>Login</Text>
+        <FormLabel>Phone</FormLabel>
+        <FormInput onChangeText={() => console.log('changed')} />
+        <FormLabel>Password</FormLabel>
+        <FormInput onChangeText={() => console.log('changed')} />
+        <Button title="Login" onPress={this.loginUser} />
       </View>
     );
   }
