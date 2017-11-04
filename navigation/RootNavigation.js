@@ -1,12 +1,16 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 import MainTabNavigator from './MainTabNavigator';
-import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
+import UserLogin from '../screens/UserLogin';
 
 const RootStackNavigator = StackNavigator(
   {
+    UserLogin: {
+      screen: UserLogin,
+    },
     Main: {
       screen: MainTabNavigator,
     },
@@ -17,7 +21,7 @@ const RootStackNavigator = StackNavigator(
         fontWeight: 'normal',
       },
     }),
-  }
+  },
 );
 
 export default class RootNavigator extends React.Component {
