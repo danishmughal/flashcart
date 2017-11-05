@@ -7,6 +7,14 @@ import { BarCodeScanner, Permissions } from 'expo';
 export default class StoreLogin extends React.Component {
   static navigationOptions = {
     title: 'Scan Your Store',
+    headerTintColor: 'white',
+    headerStyle: {
+      backgroundColor: '#151C43',
+      borderBottomColor: '#2F95D6',
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+    },
   };
 
   state = {
@@ -20,7 +28,6 @@ export default class StoreLogin extends React.Component {
 
   _handleBarCodeRead = ({ type, data }) => {
     this.props.navigation.navigate('Main');
-    alert(`Welcome to the store! ${type} ${data}.`);
   };
 
   render() {

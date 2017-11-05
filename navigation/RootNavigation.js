@@ -7,6 +7,9 @@ import MainTabNavigator from './MainTabNavigator';
 import UserLogin from '../screens/UserLogin';
 import StoreLogin from '../screens/StoreLogin';
 
+import StoreView from '../screens/StoreView';
+import CustomerDetail from '../screens/CustomerDetail';
+
 const RootStackNavigator = StackNavigator(
   {
     UserLogin: {
@@ -20,6 +23,15 @@ const RootStackNavigator = StackNavigator(
       navigationOptions: {
         headerLeft: null,
       },
+    },
+    StoreView: {
+      screen: StoreView,
+      navigationOptions: {
+        headerLeft: null,
+      },
+    },
+    CustomerDetail: {
+      screen: CustomerDetail,
     },
   },
   {

@@ -7,9 +7,27 @@ export default class LoginScreen extends React.Component {
     header: () => null,
   };
 
+  constructor(props) {
+    super(props);
+
+    global.cartCount = 0;
+
+    this.state = {
+      userPhone: '',
+    };
+  }
+
   loginUser = () => {
-    // this.props.navigation.navigate('StoreLogin');
-    this.props.navigation.navigate('Main');
+    console.log(this.state.userPhone);
+
+    if (this.state.userPhone === '1234567890') {
+      // Customer
+      this.props.navigation.navigate('StoreLogin');
+      // this.props.navigation.navigate('Main');
+    } else if (this.state.userPhone === '111') {
+      // Agent
+      this.props.navigation.navigate('StoreView');
+    }
   };
 
   render() {
@@ -24,13 +42,16 @@ export default class LoginScreen extends React.Component {
             containerStyle={styles.inputStyle}
             placeholder="Phone Number"
             placeholderTextColor="gray"
-            keyboardType="phone-pad"
-            onChangeText={() => console.log('changed')}
+            enablesReturnKeyAutomatically
+            returnKeyType="done"
+            onChangeText={userPhone => this.setState({ userPhone })}
           />
           <FormInput
             containerStyle={styles.inputStyle}
             placeholder="Password"
             placeholderTextColor="gray"
+            enablesReturnKeyAutomatically
+            returnKeyType="done"
             secureTextEntry
             onChangeText={() => console.log('changed')}
           />
