@@ -8,7 +8,8 @@ export default class LoginScreen extends React.Component {
   };
 
   loginUser = () => {
-    this.props.navigation.navigate('Featured');
+    // this.props.navigation.navigate('StoreLogin');
+    this.props.navigation.navigate('Main');
   };
 
   render() {

@@ -5,11 +5,15 @@ import registerForPushNotificationsAsync from '../api/registerForPushNotificatio
 
 import MainTabNavigator from './MainTabNavigator';
 import UserLogin from '../screens/UserLogin';
+import StoreLogin from '../screens/StoreLogin';
 
 const RootStackNavigator = StackNavigator(
   {
     UserLogin: {
       screen: UserLogin,
+    },
+    StoreLogin: {
+      screen: StoreLogin,
     },
     Main: {
       screen: MainTabNavigator,

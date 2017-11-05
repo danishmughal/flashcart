@@ -4,9 +4,9 @@ import { NavigationActions } from 'react-navigation';
 
 import { BarCodeScanner, Permissions } from 'expo';
 
-export default class ScannerScreen extends React.Component {
+export default class StoreLogin extends React.Component {
   static navigationOptions = {
-    title: 'Scan',
+    title: 'Scan Your Store',
   };
 
   state = {
@@ -19,8 +19,8 @@ export default class ScannerScreen extends React.Component {
   }
 
   _handleBarCodeRead = ({ type, data }) => {
-    this.props.navigation.navigate('Cart');
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    this.props.navigation.navigate('Main');
+    alert(`Welcome to the store! ${type} ${data}.`);
   };
 
   render() {
@@ -33,9 +33,6 @@ export default class ScannerScreen extends React.Component {
     }
     return (
       <View style={{ flex: 1 }}>
-        <View style={styles.scannerOverlay}>
-          <Text>This is some text</Text>
-        </View>
         <BarCodeScanner onBarCodeRead={this._handleBarCodeRead} style={StyleSheet.absoluteFill} />
       </View>
     );
@@ -47,11 +44,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
-  },
-  scannerOverlay: {
-    alignSelf: 'center',
-    backgroundColor: 'red',
-    width: '50%',
-    height: '50%',
   },
 });
