@@ -13,6 +13,18 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 export default class FeaturedScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Scan',
+    headerTintColor: 'white',
+    headerStyle: {
+      backgroundColor: '#151C43',
+      borderBottomColor: '#2F95D6',
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+    },
+  };
+
   render() {
     return (
       <ScrollView style={styles.container}>

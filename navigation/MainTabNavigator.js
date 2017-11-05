@@ -53,5 +53,11 @@ export default TabNavigator(
     tabBarPosition: 'bottom',
     animationEnabled: false,
     swipeEnabled: false,
+    tabBarOptions: {
+      activeTintColor: '#B4559E',
+      activeBackgroundColor: '#151C43',
+      inactiveBackgroundColor: '#151C43',
+      inactiveTintColor: '#4069AE',
+    },
   },
 );

@@ -91,6 +91,14 @@ const PRODUCTS = [
 export default class CartScreen extends React.Component {
   static navigationOptions = {
     title: 'Cart',
+    headerTintColor: 'white',
+    headerStyle: {
+      backgroundColor: '#151C43',
+      borderBottomColor: '#2F95D6',
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+    },
   };
 
   renderCartItems = () =>
@@ -108,20 +116,18 @@ export default class CartScreen extends React.Component {
     ));
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.storeName}>American Apparel</Text>
         {this.renderCartItems()}
-        <PricingCard
+        {/* <PricingCard
           color="#4f9deb"
           title="Total"
           price="$124.00"
           info={[]}
-          button={{ title: 'CHECKOUT', icon: 'attach money' }}
+          button={{ title: 'CHECKOUT', icon: 'attach-money' }}
           containerStyle={{ marginBottom: 40 }}
-        />
+        /> */}
       </ScrollView>
     );
   }

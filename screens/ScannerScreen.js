@@ -7,6 +7,14 @@ import { BarCodeScanner, Permissions } from 'expo';
 export default class ScannerScreen extends React.Component {
   static navigationOptions = {
     title: 'Scan',
+    headerTintColor: 'white',
+    headerStyle: {
+      backgroundColor: '#151C43',
+      borderBottomColor: '#2F95D6',
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+    },
   };
 
   state = {
