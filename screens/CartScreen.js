@@ -48,17 +48,8 @@ export default class CartScreen extends React.Component {
     },
   };
 
-  renderCartItems = () => {
-    let cartedCount = 0;
-    if (this.props.navigation.state.params) {
-      alert(this.props.navigation.state.params);
-      if (this.props.navigation.state.params.cartedCount) {
-        cartedCount = this.props.navigation.state.params.cartedCount;
-      }
-    }
-
-    const addedProducts = PRODUCTS.slice(0, cartedCount);
-    addedProducts.map(product => (
+  renderCartItems = () =>
+    PRODUCTS.map(product => (
       <Card wrapperStyle={styles.cartCard} key={product.id}>
         <Image style={{ width: 75, height: 75 }} source={{ uri: product.picture_url }} />
         <View style={styles.productContent}>
@@ -70,7 +61,6 @@ export default class CartScreen extends React.Component {
         </View>
       </Card>
     ));
-  };
 
   render() {
     return (

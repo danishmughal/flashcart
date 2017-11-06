@@ -27,25 +27,15 @@ export default class ScannerScreen extends React.Component {
   }
 
   _handleBarCodeRead = ({ type, data }) => {
-    let cartedCount = 0;
-    if (data == 'D5DYR6VFN1B4Y') {
-      cartedCount = 1;
-    } else if (data == '1KYB8N5506N6R') {
-      cartedCount = 2;
-    } else if (data == 'S26XQRS8EQY40') {
-      cartedCount = 3;
-    }
-
     const navigateAction = NavigationActions.navigate({
       routeName: 'Cart',
-      params: { cartedCount },
       action: NavigationActions.navigate({ routeName: 'Cart' }),
     });
 
     this.props.navigation.dispatch(navigateAction);
 
     // this.props.navigation.navigate({ routeName: 'Cart', params: { cartedCount } });
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
 
     // Data
     // lion: D5DYR6VFN1B4Y
